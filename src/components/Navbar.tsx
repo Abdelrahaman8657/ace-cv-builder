@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "py-3 card-glass neon-border border-t-0 border-x-0"
+          ? "py-3 bg-background/95 backdrop-blur-sm border-b border-border"
           : "py-5 bg-transparent"
       }`}
     >
@@ -46,7 +46,7 @@ const Navbar = () => {
             e.preventDefault();
             handleNavClick("#");
           }}
-          className="font-orbitron text-xl font-bold text-gradient glow-text"
+          className="font-playfair text-xl font-bold text-gradient"
         >
           Abdelrahman
         </a>
@@ -69,7 +69,7 @@ const Navbar = () => {
           ))}
           <Button
             size="sm"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg shadow-neon hover:shadow-neon-strong transition-all duration-300"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg transition-all duration-300"
             onClick={() => handleNavClick("#contact")}
           >
             Hire Me
@@ -88,7 +88,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 card-glass neon-border border-t-0 p-6 animate-fade-in-up">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 animate-fade-in-up">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -104,7 +104,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg shadow-neon"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg"
               onClick={() => handleNavClick("#contact")}
             >
               Hire Me
