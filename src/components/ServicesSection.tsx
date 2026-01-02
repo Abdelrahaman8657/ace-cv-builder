@@ -54,15 +54,12 @@ const packages = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 relative bg-grid">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-
+    <section id="services" className="py-24 relative bg-card/30">
       <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient">Service Packages</span>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            Service <span className="text-gradient">Packages</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Choose the perfect package for your project needs
@@ -76,10 +73,10 @@ const ServicesSection = () => {
             return (
               <div
                 key={pkg.name}
-                className={`relative p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up ${
+                className={`relative p-8 rounded-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in-up ${
                   pkg.popular
-                    ? "card-glass border-2 border-primary shadow-neon"
-                    : "card-glass neon-border neon-border-hover"
+                    ? "card-elegant border-2 border-primary"
+                    : "card-elegant elegant-border elegant-border-hover"
                 }`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
@@ -91,11 +88,11 @@ const ServicesSection = () => {
                 )}
 
                 <div className="text-center mb-6">
-                  <div className={`inline-flex p-4 rounded-2xl mb-4 ${pkg.popular ? 'bg-primary/20' : 'bg-secondary/50'}`}>
+                  <div className={`inline-flex p-4 rounded-lg mb-4 ${pkg.popular ? 'bg-primary/20' : 'bg-secondary'}`}>
                     <Icon className={`w-8 h-8 ${pkg.popular ? 'text-primary' : 'text-muted-foreground'}`} />
                   </div>
                   
-                  <h3 className="font-orbitron text-2xl font-bold text-foreground mb-2">
+                  <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">
                     {pkg.name}
                   </h3>
                   
@@ -104,7 +101,7 @@ const ServicesSection = () => {
                   </p>
 
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-orbitron font-bold text-gradient">
+                    <span className="text-4xl font-playfair font-bold text-primary">
                       {pkg.price}
                     </span>
                     <span className="text-muted-foreground text-lg">{pkg.currency}</span>
@@ -123,9 +120,9 @@ const ServicesSection = () => {
 
                 {/* CTA Button */}
                 <Button
-                  className={`w-full py-6 font-semibold rounded-xl transition-all duration-300 ${
+                  className={`w-full py-6 font-semibold rounded-lg transition-all duration-300 ${
                     pkg.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon hover:shadow-neon-strong"
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
                       : "bg-secondary hover:bg-secondary/80"
                   }`}
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
